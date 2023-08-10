@@ -1,5 +1,6 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 
 type TCardTour = {
   id: string;
@@ -8,6 +9,8 @@ type TCardTour = {
   price: number;
 };
 const CardTour: React.FC<TCardTour> = ({ id, image, name, price }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="border-[2px] border-neutral-200 shadow-sm rounded-lg grid gap-y-1">
       <div className="w-full max-h-[300px] overflow-hidden">
@@ -47,7 +50,11 @@ const CardTour: React.FC<TCardTour> = ({ id, image, name, price }) => {
             <p>Dat ngay</p>
           </Button>
 
-          <Button className="border-teal-500 text-teal-500" size="large">
+          <Button
+            className="border-teal-500 text-teal-500"
+            size="large"
+            onClick={() => navigate(`/tour/${id}`)}
+          >
             Xem chi tiet
           </Button>
         </div>
