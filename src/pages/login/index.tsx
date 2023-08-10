@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
@@ -18,40 +18,32 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex justify-center items-center">
+    <div className="flex justify-center items-center login-page">
       <div className="max-w-7xl">
         <Form
+          wrapperCol={{ span: 36 }}
           name="basic"
-          initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"
+          layout="vertical"
+          size="large"
         >
           <Form.Item
-            label="Username"
             name="username"
             rules={[{ required: true, message: "Please input your username!" }]}
           >
-            <Input />
+            <Input placeholder="Username" size="large" />
           </Form.Item>
 
           <Form.Item
-            label="Password"
             name="password"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
-            <Input.Password />
+            <Input.Password placeholder="Password" size="large" />
           </Form.Item>
 
-          <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{ offset: 8, span: 16 }}
-          >
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Form.Item wrapperCol={{ offset: 0, span: 36 }}>
             <Button
               htmlType="submit"
               onClick={() => {
@@ -59,8 +51,10 @@ const LoginPage: React.FC = () => {
                   navigate("/");
                 }, 1000);
               }}
+              className="bg-teal-500 text-white font-semibold text-base border-none w-full"
+              size="large"
             >
-              Submit
+              Đăng nhập
             </Button>
           </Form.Item>
         </Form>
