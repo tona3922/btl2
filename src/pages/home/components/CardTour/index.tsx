@@ -1,13 +1,21 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Button } from "antd";
+import dayjs from "dayjs";
 
 type TCardTour = {
   id: string;
   image: string;
   name: string;
   price: number;
+  startDate?: Date;
 };
-const CardTour: React.FC<TCardTour> = ({ id, image, name, price }) => {
+const CardTour: React.FC<TCardTour> = ({
+  id,
+  image,
+  name,
+  price,
+  startDate,
+}) => {
   return (
     <div className="border-[2px] border-neutral-200 shadow-sm rounded-lg grid gap-y-1">
       <img
@@ -17,6 +25,7 @@ const CardTour: React.FC<TCardTour> = ({ id, image, name, price }) => {
       />
       <div className="p-4 grid gap-2">
         <p className="font-thin text-sm">Ngay bat dau</p>
+        <div>{dayjs(startDate).format("DD/MM/YYYY")}</div>
         <div className="">
           <p className="font-normal text-base break-words">{name}</p>
         </div>

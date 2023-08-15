@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "antd";
 import data from "../../utils/data.json";
 import { CardTour } from "./components";
+import Tour from "../tour";
 
 const { Search } = Input;
 
@@ -30,6 +31,7 @@ const HomePage: React.FC = () => {
             />
           );
         })}
+        <Tour />
       </div>
     </div>
   );

@@ -6,12 +6,6 @@ import ShareLayout from "./layouts/ShareLayout";
 const App: React.FC = () => {
   const user = localStorage.getItem("user");
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     user = localStorage.getItem("user");
-  //   }
-  // }, [user]);
-
   return (
     <BrowserRouter>
       <Routes>
