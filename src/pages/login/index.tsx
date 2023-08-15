@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input, notification } from "antd";
+import { Button, Form, Input, notification } from "antd";
 import { useNavigate } from "react-router-dom";
 
 type Account = {
@@ -43,45 +43,43 @@ const LoginPage: React.FC = () => {
   return (
     <>
       {contextHolder}
-      <div className="min-h-screen w-full flex justify-center items-center">
+      <div className="flex justify-center items-center login-page">
         <div className="max-w-7xl">
           <Form
+            wrapperCol={{ span: 36 }}
             name="basic"
-            initialValues={{ remember: true }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"
+            layout="vertical"
+            size="large"
           >
             <Form.Item
-              label="Username"
               name="username"
               rules={[
                 { required: true, message: "Please input your username!" },
               ]}
             >
-              <Input />
+              <Input placeholder="Username" size="large" />
             </Form.Item>
 
             <Form.Item
-              label="Password"
               name="password"
               rules={[
                 { required: true, message: "Please input your password!" },
               ]}
             >
-              <Input.Password />
+              <Input.Password placeholder="Password" size="large" />
             </Form.Item>
 
-            <Form.Item
-              name="remember"
-              valuePropName="checked"
-              wrapperCol={{ offset: 8, span: 16 }}
-            >
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button htmlType="submit">Submit</Button>
+            <Form.Item wrapperCol={{ offset: 0, span: 36 }}>
+              <Button
+                htmlType="submit"
+                className="bg-teal-500 text-white font-semibold text-base border-none w-full"
+                size="large"
+              >
+                Đăng nhập
+              </Button>
             </Form.Item>
           </Form>
         </div>

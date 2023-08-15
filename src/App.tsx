@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, LoginPage } from "./pages";
+import { DetailTour, HomePage, LoginPage } from "./pages";
 import ProtectedRoute from "./pages/protected";
 import ShareLayout from "./layouts/ShareLayout";
 
@@ -9,15 +9,17 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ShareLayout></ShareLayout>}>
-          <Route
-            index
-            element={
-              <ProtectedRoute user={user}>
-                <HomePage />
-              </ProtectedRoute>
-            }
-          ></Route>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute user={user}>
+              <ShareLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<HomePage />}></Route>
+
+          <Route path="/tour/:id" element={<DetailTour />}></Route>
         </Route>
 
         <Route path="/login" element={<LoginPage />}></Route>
