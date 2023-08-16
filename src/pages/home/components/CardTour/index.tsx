@@ -3,7 +3,7 @@ import { Button } from "antd";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 
-type TCardTour = {
+export type TCardTour = {
   id: string;
   image: string;
   name: string;

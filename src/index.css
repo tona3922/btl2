@@ -36,10 +36,6 @@
   }
 }
 
-.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
-  color: #115e59;
-}
-
 @layer components {
   .login-page {
     overflow: auto;
@@ -57,8 +53,7 @@
     z-index: -1;
 
     display: block;
-    background-image: url("https://images.unsplash.com/photo-1570366583862-f91883984fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80");
-
+    background-image: url("https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,7 +61,7 @@
     width: 100%;
     height: 100vh;
 
-    filter: blur(1px) brightness(50%);
+    /* filter: blur(1px) brightness(80%); */
   }
 
   .search-home {
@@ -74,7 +69,9 @@
       background-color: transparent;
       border-radius: 0%;
       border: none;
-      border-bottom: 2px solid #10b981;
+      border-bottom: 1px solid black;
+      font-size: large;
+      box-shadow: none;
     }
 
     .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
@@ -92,9 +89,9 @@
       border: none;
       background-color: transparent;
     }
-
-    .ant-input-search .ant-input:hover {
-      color: #10b981;
-    }
   }
+}
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+  color: gray;
+  border-color: rgb(20, 184, 166);
 }

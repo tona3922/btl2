@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { CardTour } from "../home/components";
 
-type tour = {
+export type TTour = {
   id: string;
   tour_name: string;
   image: string;
@@ -34,7 +34,7 @@ const Tour: React.FC = () => {
   console.log(tour);
   return (
     <>
-      {tour.map((item: tour) => {
+      {tour.map((item: TTour) => {
         return (
           <CardTour
             key={item.id}
